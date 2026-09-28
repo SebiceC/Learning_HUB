@@ -83,7 +83,11 @@ npm run generar -- ruta/a/norma.pdf --id 27002 --categoria "Gestión de la Segur
 
 ## Despliegue
 
-Es una SPA estática: basta con publicar `dist/`. Como usa rutas reales, el hosting debe redirigir cualquier ruta a `index.html`; ya están incluidas las configuraciones para **Vercel** (`vercel.json`) y **Netlify** (`public/_redirects`).
+**Web publicada:** https://sebicec.github.io/Learning_HUB/
+
+Se despliega en **GitHub Pages** automáticamente con cada push a `main` (`.github/workflows/deploy.yml`): el workflow ejecuta lint y build con `BASE_PATH=/Learning_HUB/` y copia `index.html` como `404.html`, para que las URLs directas de los módulos funcionen aunque Pages no redirija rutas.
+
+Es una SPA estática, así que también funciona en otros hostings publicando `dist/` (con la base por defecto `/`). Como usa rutas reales, el hosting debe redirigir cualquier ruta a `index.html`; ya están incluidas las configuraciones para **Vercel** (`vercel.json`) y **Netlify** (`public/_redirects`).
 
 ## Aviso
 
