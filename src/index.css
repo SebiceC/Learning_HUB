@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-[#bbbbbb];
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-white uppercase;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  .m-button {
+    @apply bg-black text-white border border-white px-8 h-12 uppercase text-sm font-bold flex items-center justify-center transition-colors hover:bg-white hover:text-black disabled:opacity-50 disabled:cursor-not-allowed;
+    letter-spacing: 1.5px;
+    border-radius: 0;
+  }
+  
+  .m-button-icon {
+    @apply bg-[#1a1a1a] text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#262626] transition-colors disabled:opacity-50;
+  }
+  
+  .m-card {
+    @apply bg-[#1a1a1a] border-none text-white;
+    border-radius: 0;
+  }
+
+  .m-card-elevated {
+    @apply bg-[#262626] border border-[#3c3c3c] text-white;
+    border-radius: 0;
+  }
+
+  .m-input {
+    @apply bg-[#1a1a1a] text-white border border-[#3c3c3c] px-4 h-12 w-full focus:outline-none focus:border-white transition-colors;
+    border-radius: 0;
+  }
+
+  .m-divider {
+    @apply border-[#3c3c3c];
+  }
+}
+
+@layer utilities {
+  .prose-custom {
+    max-width: none;
+  }
+  .prose-custom h1, .prose-custom h2, .prose-custom h3 {
+    @apply uppercase font-bold text-white;
+  }
+  .prose-custom p, .prose-custom li {
+    @apply text-[#bbbbbb] font-light text-base leading-relaxed;
+  }
+  .prose-custom strong {
+    @apply font-bold text-white;
+  }
+}
